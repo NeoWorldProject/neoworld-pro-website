@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="NeoWorld-Pro programs interactive simulation-ready scenes from monocular images through MLLM-driven code synthesis and physics-in-the-loop refinement.">
+  <meta name="keywords" content="NeoWorld-Pro, embodied simulation, real-to-sim, monocular reconstruction, articulated objects, MLLM, physics-in-the-loop">
+  <meta property="og:title" content="NeoWorld-Pro: Programming Interactive Scenes from Monocular Images for Embodied Simulation">
+  <meta property="og:description" content="Project page for NeoWorld-Pro, a framework for simulation-ready interactive scene generation from a single RGB image.">
+  <meta property="og:image" content="static/images/figure-1-demonstration.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>NeoWorld-Pro: Programming Interactive Scenes from Monocular Images</title>
+  <link rel="stylesheet" href="static/css/style.css?v=20260824-19">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./static/vendor/three/three.module.js",
+        "three/addons/": "./static/vendor/three/examples/jsm/"
+      }
+    }
+  </script>
+  <link rel="modulepreload" href="static/js/demo-viewer.js">
+  <link rel="modulepreload" href="static/vendor/three/three.module.js">
+  <link rel="modulepreload" href="static/vendor/three/three.core.js">
+  <link rel="modulepreload" href="static/vendor/three/examples/jsm/loaders/OBJLoader.js">
+</head>
+<body>
+  <header class="site-nav" aria-label="Primary navigation">
+    <a class="brand" href="#top" aria-label="NeoWorld-Pro home">NeoWorld-Pro</a>
+    <nav class="nav-links">
+      <a href="#teaser-video">Video</a>
+      <a href="#synthetic-scenes">Interactive Scene</a>
+      <a href="#demo-visualization">Articulated Asset</a>
+      
+      <a href="#benchmark">Benchmark</a>
+      <a href="#results">Real-captured Scenes</a>
+      <a href="#bibtex">BibTeX</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="paper-title">
+      <div class="hero-grid" aria-hidden="true"></div>
+      
+      <div class="hero-inner">
+        <p class="eyebrow">Monocular Real-to-Sim Scene Programming</p>
+        <h1 id="paper-title">
+          <span class="title-part">Programming Interactive Scenes from Monocular Images</span>
+          
+          <span class="title-part">for Embodied Simulation</span>
+          
+        </h1>
+        <p class="subtitle">
+          NeoWorld-Pro transforms a single RGB image into executable, simulation-ready interactive scenes with programmable geometry, articulation, physical properties, and scene layout.
+        </p>
+        <p class="authors">
+          Yumeng He<sup>*</sup>, Yichen Song<sup>*</sup>, Xiaotian Yang, Weijia Zhang, Zanwei Zhou, <br>Junru Gong, Xiaokang Yang, Yunbo Wang<sup>&dagger;</sup>
+        </p>
+        <p class="affiliation">Shanghai Jiao Tong University</p>
+        <p class="author-notes"><span>* Equal contribution</span><span>&dagger; Corresponding author</span></p>
+        <div class="button-row" aria-label="Project links">
+          <a class="button button-primary placeholder-link" href="#" aria-disabled="true">Paper </a>
+          
+          <a class="button placeholder-link" href="#" aria-disabled="true">Arxiv</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="teaser-video" class="section reveal">
+      <div class="section-heading">
+        <h2>Abstract</h2>
+      </div>
+      <div class="teaser-summary">
+        <p>
+          The advancement of Embodied AI requires high-quality simulation assets that faithfully mirror the physical world. NeoWorld-Pro reformulates monocular scene reconstruction as a procedural programming task for interactive 3D environments. It leverages multimodal large language models to translate a single RGB image into executable programs defining object geometry, articulation, physical properties, and scene layout.
+        </p>
+        <p>
+          To ensure simulation readiness, NeoWorld-Pro introduces a physics-in-the-loop mechanism that executes generated programs in a physics engine and iteratively refines them using simulation feedback. The resulting scenes support stable stacking, fine-grained manipulation, and articulated object interactions that are difficult for open-loop reconstruction pipelines.
+        </p>
+      </div>
+    </section>
+
+    
+
+    <section id="synthetic-scenes" class="section reveal">
+      <div class="section-heading">
+        <p class="eyebrow">Interactive Scene</p>
+        <h2>Select an input image to explore its interactive simulated scene.</h2>
+      </div>
+      <div class="synthetic-demo" data-synthetic-demo>
+        <aside class="synthetic-input-panel" aria-label="Selectable input images">
+          <p class="synthetic-panel-title">Input Images</p>
+          <div class="synthetic-input-list">
+            <button class="synthetic-input-button is-active" type="button" data-synthetic-input data-video-src="asset/synthetic-scenes/scene-01-simulation.mp4" aria-label="Show the simulation for the first input image" aria-pressed="true">
+              <img src="asset/synthetic-scenes/scene-01-input.png" alt="Synthetic scene input image with arranged objects." loading="lazy" decoding="async">
+            </button>
+            <button class="synthetic-input-button" type="button" data-synthetic-input data-video-src="asset/synthetic-scenes/scene-03-simulation.mp4" aria-label="Show the simulation for the second input image" aria-pressed="false">
+              <img src="asset/synthetic-scenes/scene-03-input.png" alt="Synthetic scene input image with multiple objects." loading="lazy" decoding="async">
+            </button>
+            <button class="synthetic-input-button" type="button" data-synthetic-input data-video-src="asset/synthetic-scenes/scene-06-simulation.mp4" aria-label="Show the simulation for the third input image" aria-pressed="false">
+              <img src="asset/synthetic-scenes/scene-06-input.png" alt="Synthetic scene input image with interactive objects." loading="lazy" decoding="async">
+            </button>
+            <button class="synthetic-input-button" type="button" data-synthetic-input data-video-src="asset/synthetic-scenes/scene-16-simulation.mp4" aria-label="Show the simulation for the fourth input image" aria-pressed="false">
+              <img src="asset/synthetic-scenes/scene-16-input.png" alt="Synthetic scene input image with a multi-object layout." loading="lazy" decoding="async">
+            </button>
+            <button class="synthetic-input-button" type="button" data-synthetic-input data-video-src="asset/synthetic-scenes/scene-17-simulation.mp4" aria-label="Show the simulation for the fifth input image" aria-pressed="false">
+              <img src="asset/synthetic-scenes/scene-17-input.png" alt="Synthetic scene input image with physically arranged objects." loading="lazy" decoding="async">
+            </button>
+          </div>
+        </aside>
+        <div class="synthetic-video-panel">
+          <div class="synthetic-video-header">
+            <p class="synthetic-panel-title">Simulated Interactive Scene</p>
+            <span>Choose an input image to switch the simulation.</span>
+          </div>
+          <video src="asset/synthetic-scenes/scene-01-simulation.mp4" autoplay muted loop playsinline preload="auto" data-synthetic-player aria-label="Interactive simulation for the selected input image"></video>
+        </div>
+      </div>
+    </section>
+
+    <section id="demo-visualization" class="section reveal">
+      <div class="section-heading">
+        <p class="eyebrow">Articulated Asset</p>
+        <h2>Inspect generated assets and actuate their articulated parts in the browser.</h2>
+        
+      </div>
+      <div class="demo-shell" data-demo-viewer>
+        <aside class="demo-case-list" data-demo-list aria-label="Demo cases">
+          <div class="demo-loading">Loading demo cases...</div>
+        </aside>
+        <div class="demo-viewer-panel">
+          <div class="demo-viewer-header">
+            <div>
+              <p class="demo-kicker">USD Preview</p>
+              <h3 data-demo-title>Loading demo</h3>
+              <p data-demo-meta>Preparing the interactive viewer.</p>
+            </div>
+            <button class="demo-reset-button" type="button" data-demo-reset>Reset</button>
+          </div>
+          <div class="demo-stage-layout">
+            <div class="demo-stage" data-demo-stage>
+              <div class="demo-stage-placeholder">
+                <span>Loading 3D scene...</span>
+              </div>
+            </div>
+            <aside class="demo-joint-panel" data-joint-panel>
+              <p class="demo-panel-title">Joints</p>
+              <p class="demo-panel-empty">Joint controls appear after a case loads.</p>
+            </aside>
+          </div>
+          <div class="demo-status" data-demo-status>Choose a case to load its simulation-ready asset.</div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <section id="benchmark" class="section reveal">
+      <div class="section-heading">
+        <p class="eyebrow">Dataset and Benchmark</p>
+        <h2>A multi-object simulation benchmark for physically executable scenes.</h2>
+      </div>
+      <div class="benchmark-layout">
+        <div class="benchmark-copy">
+          <p>
+            NeoWorld-Pro is evaluated on PartNet-Mobility and a newly constructed synthetic scene benchmark designed to stress-test monocular reconstruction in physically realistic multi-object environments. The benchmark tasks cover placement, assembly, articulation, and interaction with task-relevant affordances.
+          </p>
+          <p>
+            Across 84 downstream manipulation tasks, NeoWorld-Pro achieves a 92.85% task success rate.
+          </p>
+          <div class="benchmark-stats">
+            
+            <div>
+              <strong>90</strong>
+              <span>articulated categories</span>
+            </div>
+            <div>
+              <strong>30</strong>
+              <span>USD-format scenes</span>
+            </div>
+            <div>
+              <strong>84</strong>
+              <span>downstream tasks</span>
+            </div>
+          </div>
+        </div>
+        <figure class="figure-panel benchmark-task-figure">
+          <img src="asset/figure/task.png" alt="The first three groups of NeoWorld-Pro benchmark scenes with their corresponding manipulation tasks." loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </section>
+
+    <section id="results" class="section reveal">
+      <div class="section-heading">
+        <p class="eyebrow">Real-captured Scenes</p>
+        <h2>Select a real-world input to explore its interactive reconstruction.</h2>
+      </div>
+      <div class="real-scene-demo" data-real-scene-demo>
+        <aside class="real-scene-input-panel" aria-label="Selectable real-captured input images">
+          <p class="real-scene-panel-title">Input Images</p>
+          <div class="real-scene-input-list">
+            <button class="real-scene-input-button is-active" type="button" data-real-scene-input="real-scene-video-1" aria-label="Show the reconstruction for the first real-captured input" aria-pressed="true">
+              <img src="asset/figure/real-captured-input.png" alt="First real-captured scene input." loading="lazy" decoding="async">
+            </button>
+            <button class="real-scene-input-button" type="button" data-real-scene-input="real-scene-video-2" aria-label="Show the reconstruction for the second real-captured input" aria-pressed="false">
+              <img src="asset/real-captured-scenes/scene-02-input.jpg" alt="Second real-captured scene input." loading="lazy" decoding="async">
+            </button>
+          </div>
+        </aside>
+        <div class="real-scene-video-panel">
+          <div class="real-scene-video-header">
+            <p class="real-scene-panel-title">Simulated Interactive Scene</p>
+            <span>Choose an input image to switch the reconstruction.</span>
+          </div>
+          <div class="real-scene-video-stage">
+            <video id="real-scene-video-1" class="is-active" src="asset/figure/scene_video.mp4" autoplay muted loop playsinline preload="auto" data-real-scene-video aria-label="Interactive reconstruction for the first real-captured input"></video>
+            <video id="real-scene-video-2" src="asset/real-captured-scenes/scene-02-simulation.mp4" autoplay muted loop playsinline preload="auto" data-real-scene-video aria-label="Interactive reconstruction for the second real-captured input"></video>
+          </div>
+        </div>
+      </div>
+
+      
+    </section>
+
+    <section id="bibtex" class="section reveal">
+      <div class="section-heading">
+        <p class="eyebrow">Citation</p>
+        <h2>BibTeX</h2>
+      </div>
+      <pre class="bibtex"><code>@misc{he2026NeoWorld-Pro,
+  title  = {NeoWorld-Pro: Programming Interactive Scenes from Monocular Images for Embodied Simulation},
+  author = {He, Yumeng and Song, Yichen and Yang, Xiaotian and Zhang, Weijia and Zhou, Zanwei and Gong, Junru and Yang, Xiaokang and Wang, Yunbo},
+  year   = {2026},
+  note   = {Project page}
+}</code></pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>NeoWorld-Pro project page. Built as a self-contained static website.</p>
+  </footer>
+
+  <script src="static/js/main.js?v=20260824-3"></script>
+  <script>
+    if (window.location.protocol === "file:") {
+      const message = "Open this page through a local HTTP server to load demos.";
+      document.querySelectorAll("[data-demo-list]").forEach((element) => {
+        element.replaceChildren();
+        const notice = document.createElement("div");
+        notice.className = "demo-loading";
+        notice.textContent = message;
+        element.append(notice);
+      });
+      const title = document.querySelector("[data-demo-title]");
+      const meta = document.querySelector("[data-demo-meta]");
+      const status = document.querySelector("[data-demo-status]");
+      const stageLabel = document.querySelector(".demo-stage-placeholder span");
+      if (title) title.textContent = "Local server required";
+      if (meta) meta.textContent = "The browser blocks demo module and asset loading from file paths.";
+      if (status) status.textContent = message;
+      if (stageLabel) stageLabel.textContent = "Waiting for HTTP preview...";
+    }
+  </script>
+  <script type="module" src="static/js/demo-viewer.js"></script>
+</body>
+</html>
