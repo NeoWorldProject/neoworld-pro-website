@@ -285,6 +285,7 @@ h1 {
 }
 
 #synthetic-scenes,
+#scene-manipulation,
 #demo-visualization,
 #benchmark {
   width: min(100% - 2rem, 900px);
