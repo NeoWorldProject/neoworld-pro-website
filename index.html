@@ -28,8 +28,8 @@
   <header class="site-nav" aria-label="Primary navigation">
     <a class="brand" href="#top" aria-label="NeoWorld-Pro home">NeoWorld-Pro</a>
     <nav class="nav-links">
-      <a href="#teaser-video">Video</a>
       <a href="#synthetic-scenes">Interactive Scene</a>
+      <a href="#scene-manipulation">Manipulation</a>
       <a href="#demo-visualization">Articulated Asset</a>
       
       <a href="#benchmark">Benchmark</a>
@@ -90,29 +90,29 @@
         <aside class="synthetic-input-panel" aria-label="Selectable input images">
           <p class="synthetic-panel-title">Input Images</p>
           <div class="synthetic-input-list">
-            <button class="synthetic-input-button is-active" type="button" data-synthetic-input data-video-src="asset/real-captured-scenes/scene-05-simulation.mp4" aria-label="Show the simulation for the first input image" aria-pressed="true">
-              <img src="asset/real-captured-scenes/scene-05-input.png" alt="Real-captured scene input image." loading="lazy" decoding="async">
-            </button>
-            <button class="synthetic-input-button" type="button" data-synthetic-input data-video-src="asset/figure/scene_video.mp4" aria-label="Show the simulation for the second input image" aria-pressed="false">
-              <img src="asset/figure/real-captured-input.png" alt="Real-captured scene input image." loading="lazy" decoding="async">
-            </button>
-            <button class="synthetic-input-button" type="button" data-synthetic-input data-video-src="asset/real-captured-scenes/scene-02-simulation.mp4" aria-label="Show the simulation for the third input image" aria-pressed="false">
-              <img src="asset/real-captured-scenes/scene-02-input.jpg" alt="Real-captured scene input image." loading="lazy" decoding="async">
-            </button>
-            <button class="synthetic-input-button" type="button" data-synthetic-input data-video-src="asset/synthetic-scenes/scene-01-simulation.mp4" aria-label="Show the simulation for the fourth input image" aria-pressed="false">
-              <img src="asset/synthetic-scenes/scene-01-input.png" alt="Synthetic scene input image with arranged objects." loading="lazy" decoding="async">
-            </button>
-            <button class="synthetic-input-button" type="button" data-synthetic-input data-video-src="asset/synthetic-scenes/scene-03-simulation.mp4" aria-label="Show the simulation for the fifth input image" aria-pressed="false">
-              <img src="asset/synthetic-scenes/scene-03-input.png" alt="Synthetic scene input image with multiple objects." loading="lazy" decoding="async">
-            </button>
-            <button class="synthetic-input-button" type="button" data-synthetic-input data-video-src="asset/synthetic-scenes/scene-06-simulation.mp4" aria-label="Show the simulation for the sixth input image" aria-pressed="false">
-              <img src="asset/synthetic-scenes/scene-06-input.png" alt="Synthetic scene input image with interactive objects." loading="lazy" decoding="async">
-            </button>
-            <button class="synthetic-input-button" type="button" data-synthetic-input data-video-src="asset/synthetic-scenes/scene-16-simulation.mp4" aria-label="Show the simulation for the seventh input image" aria-pressed="false">
+            <button class="synthetic-input-button is-active" type="button" data-synthetic-input data-video-src="asset/synthetic-scenes/scene-16-simulation.mp4" aria-label="Show the simulation for the first input image" aria-pressed="true">
               <img src="asset/synthetic-scenes/scene-16-input.png" alt="Synthetic scene input image with a multi-object layout." loading="lazy" decoding="async">
             </button>
-            <button class="synthetic-input-button" type="button" data-synthetic-input data-video-src="asset/synthetic-scenes/scene-17-simulation.mp4" aria-label="Show the simulation for the eighth input image" aria-pressed="false">
+            <button class="synthetic-input-button" type="button" data-synthetic-input data-video-src="asset/synthetic-scenes/scene-17-simulation.mp4" aria-label="Show the simulation for the second input image" aria-pressed="false">
               <img src="asset/synthetic-scenes/scene-17-input.png" alt="Synthetic scene input image with physically arranged objects." loading="lazy" decoding="async">
+            </button>
+            <button class="synthetic-input-button" type="button" data-synthetic-input data-video-src="asset/real-captured-scenes/scene-05-simulation.mp4" aria-label="Show the simulation for the third input image" aria-pressed="false">
+              <img src="asset/real-captured-scenes/scene-05-input.png" alt="Real-captured scene input image." loading="lazy" decoding="async">
+            </button>
+            <button class="synthetic-input-button" type="button" data-synthetic-input data-video-src="asset/figure/scene_video.mp4" aria-label="Show the simulation for the fourth input image" aria-pressed="false">
+              <img src="asset/figure/real-captured-input.png" alt="Real-captured scene input image." loading="lazy" decoding="async">
+            </button>
+            <button class="synthetic-input-button" type="button" data-synthetic-input data-video-src="asset/real-captured-scenes/scene-02-simulation.mp4" aria-label="Show the simulation for the fifth input image" aria-pressed="false">
+              <img src="asset/real-captured-scenes/scene-02-input.jpg" alt="Real-captured scene input image." loading="lazy" decoding="async">
+            </button>
+            <button class="synthetic-input-button" type="button" data-synthetic-input data-video-src="asset/synthetic-scenes/scene-01-simulation.mp4" aria-label="Show the simulation for the sixth input image" aria-pressed="false">
+              <img src="asset/synthetic-scenes/scene-01-input.png" alt="Synthetic scene input image with arranged objects." loading="lazy" decoding="async">
+            </button>
+            <button class="synthetic-input-button" type="button" data-synthetic-input data-video-src="asset/synthetic-scenes/scene-03-simulation.mp4" aria-label="Show the simulation for the seventh input image" aria-pressed="false">
+              <img src="asset/synthetic-scenes/scene-03-input.png" alt="Synthetic scene input image with multiple objects." loading="lazy" decoding="async">
+            </button>
+            <button class="synthetic-input-button" type="button" data-synthetic-input data-video-src="asset/synthetic-scenes/scene-06-simulation.mp4" aria-label="Show the simulation for the eighth input image" aria-pressed="false">
+              <img src="asset/synthetic-scenes/scene-06-input.png" alt="Synthetic scene input image with interactive objects." loading="lazy" decoding="async">
             </button>
           </div>
         </aside>
@@ -121,8 +121,18 @@
             <p class="synthetic-panel-title">Simulated Interactive Scene</p>
             <span>Choose an input image to switch the simulation.</span>
           </div>
-          <video src="asset/real-captured-scenes/scene-05-simulation.mp4" autoplay muted loop playsinline preload="auto" data-synthetic-player aria-label="Interactive simulation for the selected input image"></video>
+          <video src="asset/synthetic-scenes/scene-16-simulation.mp4" autoplay muted loop playsinline preload="auto" data-synthetic-player aria-label="Interactive simulation for the selected input image"></video>
         </div>
+      </div>
+    </section>
+
+    <section id="scene-manipulation" class="section reveal">
+      <div class="section-heading">
+        <p class="eyebrow">Interactive Scenes</p>
+        <h2>Programming simulation-ready scenes for embodied manipulation.</h2>
+      </div>
+      <div class="video-panel manipulation-video-panel">
+        <video src="asset/interactive-scenes/manipulation.mp4" autoplay muted loop playsinline controls preload="auto" aria-label="Interactive scene manipulation demonstration"></video>
       </div>
     </section>
 
