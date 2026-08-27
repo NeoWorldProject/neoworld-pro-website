@@ -24,46 +24,51 @@
     });
   });
 
-  var syntheticDemo = document.querySelector("[data-synthetic-demo]");
-  if (syntheticDemo) {
-    var syntheticPlayer = syntheticDemo.querySelector("[data-synthetic-player]");
-    var syntheticInputs = Array.prototype.slice.call(
-      syntheticDemo.querySelectorAll("[data-synthetic-input]")
-    );
+  var setupVideoSelector = function (demoSelector, playerSelector, inputSelector) {
+    var demo = document.querySelector(demoSelector);
+    if (!demo) {
+      return;
+    }
 
-    var selectSyntheticInput = function (selectedInput) {
-      syntheticInputs.forEach(function (input) {
+    var player = demo.querySelector(playerSelector);
+    var inputs = Array.prototype.slice.call(demo.querySelectorAll(inputSelector));
+
+    var selectInput = function (selectedInput) {
+      inputs.forEach(function (input) {
         var isSelected = input === selectedInput;
         input.classList.toggle("is-active", isSelected);
         input.setAttribute("aria-pressed", String(isSelected));
       });
 
       var videoSource = selectedInput.getAttribute("data-video-src");
-      if (!syntheticPlayer || !videoSource) {
+      if (!player || !videoSource) {
         return;
       }
 
-      syntheticPlayer.pause();
-      if (syntheticPlayer.getAttribute("src") !== videoSource) {
-        syntheticPlayer.setAttribute("src", videoSource);
-        syntheticPlayer.load();
+      player.pause();
+      if (player.getAttribute("src") !== videoSource) {
+        player.setAttribute("src", videoSource);
+        player.load();
       } else {
-        syntheticPlayer.currentTime = 0;
+        player.currentTime = 0;
       }
 
-      syntheticPlayer.muted = true;
-      var playback = syntheticPlayer.play();
+      player.muted = true;
+      var playback = player.play();
       if (playback && typeof playback.catch === "function") {
         playback.catch(function () {});
       }
     };
 
-    syntheticInputs.forEach(function (input) {
+    inputs.forEach(function (input) {
       input.addEventListener("click", function () {
-        selectSyntheticInput(input);
+        selectInput(input);
       });
     });
-  }
+  };
+
+  setupVideoSelector("[data-synthetic-demo]", "[data-synthetic-player]", "[data-synthetic-input]");
+  setupVideoSelector("[data-manipulation-demo]", "[data-manipulation-player]", "[data-manipulation-input]");
 
   var revealItems = document.querySelectorAll(".reveal");
   if (!("IntersectionObserver" in window)) {

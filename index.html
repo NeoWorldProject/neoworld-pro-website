@@ -10,7 +10,7 @@
   <meta property="og:image" content="static/images/figure-1-demonstration.png">
   <meta name="twitter:card" content="summary_large_image">
   <title>NeoWorld-Pro: Programming Interactive Scenes from Monocular Images</title>
-  <link rel="stylesheet" href="static/css/style.css?v=20260825-1">
+  <link rel="stylesheet" href="static/css/style.css?v=20260827-3">
   <script type="importmap">
     {
       "imports": {
@@ -29,8 +29,8 @@
     <a class="brand" href="#top" aria-label="NeoWorld-Pro home">NeoWorld-Pro</a>
     <nav class="nav-links">
       <a href="#synthetic-scenes">Interactive Scene</a>
-      <a href="#scene-manipulation">Manipulation</a>
       <a href="#demo-visualization">Articulated Asset</a>
+      <a href="#scene-manipulation">Manipulation</a>
       
       <a href="#benchmark">Benchmark</a>
       <a href="#bibtex">BibTeX</a>
@@ -58,9 +58,9 @@
         <p class="affiliation">Shanghai Jiao Tong University</p>
         <p class="author-notes"><span>* Equal contribution</span><span>&dagger; Corresponding author</span></p>
         <div class="button-row" aria-label="Project links">
-          <a class="button button-primary placeholder-link" href="#" aria-disabled="true">Paper </a>
+          <a class="button" href="https://arxiv.org/abs/2608.24212v1" target="_blank" rel="noopener noreferrer">Arxiv</a>
+          <a class="button placeholder-link" href="#" aria-disabled="true">Code (coming soon)</a>
           
-          <a class="button placeholder-link" href="#" aria-disabled="true">Arxiv</a>
         </div>
       </div>
     </section>
@@ -126,16 +126,6 @@
       </div>
     </section>
 
-    <section id="scene-manipulation" class="section reveal">
-      <div class="section-heading">
-        <p class="eyebrow">Image-to-policy demonstration</p>
-        <h2>Programming simulation-ready scenes for embodied manipulation.</h2>
-      </div>
-      <div class="video-panel manipulation-video-panel">
-        <video src="asset/interactive-scenes/manipulation.mp4" autoplay muted loop playsinline controls preload="auto" aria-label="Interactive scene manipulation demonstration"></video>
-      </div>
-    </section>
-
     <section id="demo-visualization" class="section reveal">
       <div class="section-heading">
         <p class="eyebrow">Articulated Asset</p>
@@ -167,6 +157,32 @@
             </aside>
           </div>
           <div class="demo-status" data-demo-status>Choose a case to load its simulation-ready asset.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="scene-manipulation" class="section reveal">
+      <div class="section-heading">
+        <p class="eyebrow">Image-to-policy demonstration</p>
+        <h2>Programming simulation-ready scenes for embodied manipulation.</h2>
+      </div>
+      <div class="synthetic-demo manipulation-demo" data-manipulation-demo>
+        <aside class="manipulation-input-panel" aria-label="Selectable manipulation input images">
+          <div class="synthetic-input-list">
+            <button class="synthetic-input-button is-active" type="button" data-manipulation-input data-video-src="asset/interactive-scenes/manip_1.mp4" aria-label="Show the policy rollout for the first input image" aria-pressed="true">
+              <img src="asset/interactive-scenes/manip_1.png?v=20260827-1" alt="First manipulation task input image." loading="lazy" decoding="async">
+            </button>
+            <button class="synthetic-input-button" type="button" data-manipulation-input data-video-src="asset/interactive-scenes/manip_2.mp4" aria-label="Show the policy rollout for the second input image" aria-pressed="false">
+              <img src="asset/interactive-scenes/manip_2.jpeg" alt="Second manipulation task input image." loading="lazy" decoding="async">
+            </button>
+          </div>
+        </aside>
+        <div class="synthetic-video-panel manipulation-video-panel">
+          <div class="synthetic-video-header">
+            <p class="synthetic-panel-title">Policy Rollout</p>
+            <span>Choose an input image to switch the demonstration.</span>
+          </div>
+          <video src="asset/interactive-scenes/manip_1.mp4" autoplay muted loop playsinline controls preload="auto" data-manipulation-player aria-label="Policy rollout for the selected input image"></video>
         </div>
       </div>
     </section>
@@ -226,7 +242,7 @@
     <p>NeoWorld-Pro project page. Built as a self-contained static website.</p>
   </footer>
 
-  <script src="static/js/main.js?v=20260824-3"></script>
+  <script src="static/js/main.js?v=20260827-1"></script>
   <script>
     if (window.location.protocol === "file:") {
       const message = "Open this page through a local HTTP server to load demos.";

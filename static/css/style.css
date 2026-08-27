@@ -423,9 +423,37 @@ h1 {
   background: #05070b;
 }
 
+.manipulation-demo {
+  align-items: center;
+}
+
+.manipulation-input-panel {
+  width: 100%;
+  align-self: center;
+}
+
+.manipulation-input-panel .synthetic-input-list {
+  flex: none;
+  overflow: visible;
+  padding: 0.2rem;
+}
+
+.manipulation-video-panel {
+  height: auto;
+  align-self: center;
+  grid-template-rows: auto auto;
+}
+
+.synthetic-video-panel.manipulation-video-panel video {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  aspect-ratio: 16 / 9;
+}
+
 .benchmark-layout {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
   gap: clamp(1.4rem, 4vw, 3rem);
   align-items: start;
 }
@@ -976,6 +1004,7 @@ th {
 
 .benchmark-copy {
   color: var(--muted);
+  font-size: 1.08rem;
 }
 
 .benchmark-stats {
