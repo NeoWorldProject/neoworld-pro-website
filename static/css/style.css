@@ -184,9 +184,10 @@ h1 {
 }
 
 .subtitle {
-  max-width: 850px;
+  width: fit-content;
+  max-width: 100%;
   margin: 1.75rem auto 0;
-  padding: 1.15rem 1.5rem;
+  padding: 0.45rem 0.9rem;
   border: 1px solid rgba(88, 215, 239, 0.22);
   border-radius: 14px;
   color: #d7e2f1;
@@ -1229,7 +1230,7 @@ th {
 
   .subtitle {
     max-width: 21rem;
-    padding: 0.9rem 1rem;
+    padding: 0.4rem 0.75rem;
     border-radius: 11px;
     font-size: 1rem;
     line-height: 1.55;
