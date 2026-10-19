@@ -1,13 +1,17 @@
-# NeoWorld-Pro
-### [Project page](https://neoworldproject.github.io/neoworld-pro-website/)
+# Project page for paper: NeoWorld-Pro: Programming Interactive Scenes from Monocular Images for Embodied Simulation
 
-Project page for paper: **NeoWorld-Pro: Programming Interactive Scenes from Monocular Images for Embodied Simulation**.
+**NeurIPS 2026**
 
-**Paper under review**.
+[ArXiv Paper](https://arxiv.org/abs/2608.24212) | [Project Page](https://neoworldproject.github.io/neoworld-pro-website/) ｜ [Github Code](https://github.com/NeoWorldProject/NeoWorld-Pro-code)
 
-## Abstract
 
-NeoWorld-Pro transforms a single RGB image into executable, simulation-ready interactive scenes with programmable geometry, articulation, physical properties, and scene layout. It reformulates monocular scene reconstruction as a procedural programming task for interactive 3D environments, using multimodal large language models to generate object assets and scene programs.
+## Citation
 
-To improve simulation readiness, NeoWorld-Pro introduces a physics-in-the-loop refinement mechanism. Generated programs are executed in a physics engine, and simulation feedback is used to iteratively correct object geometry, articulation, collision, mass, support relations, and scene consistency. The resulting scenes support stable stacking, fine-grained manipulation, and articulated object interactions for embodied simulation.
-
+```bibtex
+@article{he2026neoworld,
+  title={Neoworld-pro: Programming interactive scenes from monocular images for embodied simulation},
+  author={He, Yumeng and Song, Yichen and Yang, Xiaotian and Zhang, Weijia and Zhou, Zanwei and Gong, Junru and Yang, Xiaokang and Wang, Yunbo},
+  journal={arXiv preprint arXiv:2608.24212},
+  year={2026}
+}
+```
